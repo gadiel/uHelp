@@ -1,0 +1,21 @@
+{
+  "name": "uHelp",
+  "version": "0.0.1",
+  "authors": [
+    "JoXhe <joshepw@gmail.com>"
+  ],
+  "description": "Repocitorio de Clases de Carreras Universitarias donde se encontrararan ",
+  "main": "index.html",
+  "keywords": [
+    "help"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/netsti/uhelp",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
