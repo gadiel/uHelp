@@ -101,16 +101,8 @@ angular.module('app',['ngCordova','ngMaterial','ngRoute','ngMdIcons'])
 	};
 }])
 
-.controller('RouteCtrl', ['$scope', '$location', function ($scope, $location) {
-	$scope.courses = [
-	  { id:0, course: 'Matematicas', subtitle: 'Clase 206', comments: 36, status: true },
-	  { id:1, course: 'Español', subtitle: 'Clase 308', comments: 28, status: false },
-	  { id:2, course: 'Informatica', subtitle: 'Clase 101', comments: 12, status: false },
-	  { id:3, course: 'Psicologia', subtitle: 'Clase 102', comments: 22, status: true },
-	  { id:1, course: 'Español', subtitle: 'Clase 308', comments: 28, status: false },
-	  { id:2, course: 'Informatica', subtitle: 'Clase 101', comments: 12, status: false },
-	  { id:3, course: 'Psicologia', subtitle: 'Clase 102', comments: 22, status: true },
-	];
+.controller('RouteCtrl', ['$scope', '$location', 'courses', function ($scope, $location, courses) {
+	$scope.courses = courses.courses;
 
 	$scope.navigateTo = function($id){
 		$location.path('/course/' + $id);
