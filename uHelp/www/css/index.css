@@ -18,6 +18,26 @@ html, .ng-view {
 	transition: opacity 400ms;
 }
 
+.uh-bg{
+	background-color: #4876B7 !important;
+}
+
+.st-easy{
+	border-left-color: #B5BD67 !important;
+}
+
+.st-med{
+	border-left-color: #D3935E !important;
+}
+
+.st-hard{
+	border-left-color: #CC6666 !important;
+}
+
+.md-list .md-list-item button.md-button:not(disabled):hover, .md-list .md-list-item button.md-button:hover{
+	background-color: transparent !important;
+}
+
 .main-view.ng-enter {
     -webkit-animation: .5s fadeInUp;
     -o-animation: .5s fadeInUp;
@@ -60,9 +80,6 @@ margin-bottom: 15px;
 
 .course-item{
 	border-left: 6px solid #CC6666;
-}
-.course-item.solved{
-	border-left-color: #B5BD67;
 }
 
 .fullwidth {
