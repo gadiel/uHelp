@@ -9,18 +9,14 @@
           <input type="email" ng-model="user.email" required>
         </md-input-container>
         <md-input-container flex>
-          <label>First name</label>
-          <input ng-model="user.firstName">
-        </md-input-container>
-        <md-input-container flex>
-          <label>Last Name</label>
-          <input ng-model="user.lastName">
+          <label>Name</label>
+          <input ng-model="user.name">
         </md-input-container>
 		<md-input-container >
         <label>Password</label>
         <input ng-model="user.password" type="password" ng-model="user.password" required>
       </md-input-container>
-       <md-button class="md-raised md-primary" type='submit'>Create Account</md-button>
+       <md-button class="md-raised md-primary" ng-click="registerFunc(user)" type='submit'>Create Account</md-button>
       </div>
      
     </form>

@@ -1,8 +1,7 @@
-<md-content>
-	<md-toolbar class="md-hue-1">
+<div layout="column" flex layout-fill>
+   <md-toolbar class="md-default-theme">
 		<span flex></span>
 		<div class="md-toolbar-tools">
-			
 			<h2>
 				<ng-md-icon icon="portrait" class="toolbar-icon" size="32"></ng-md-icon>
 				<span> Carlos Rodriguez Meza</span>
@@ -10,20 +9,22 @@
 			<span flex></span>
 		</div>
 	</md-toolbar>
-</md-content>
-<md-subheader class="md-no-sticky">Materias Suscritas</md-subheader>
-<div class="container">
-	<md-list>
-		<md-list-item ng-click="navigateTo(course.id, $event)" class="md-2-line md-whiteframe-z1 b-p course-item" ng-class="{'solved': course.status != 0 }" ng-repeat="course in courses">
-			<div class="md-list-item-text">
-				<h3> {{ course.course }} </h3>
-				<p> {{ course.subtitle }} </p>
-			</div>
-			<span class="md-secondary"><ng-md-icon icon="question_answer"></ng-md-icon> {{ course.comments }}</span>
-		</md-list-item>
-	</md-list>
-	<md-divider></md-divider>
+	<md-content layout-fill role="main" flex>
+		<md-subheader>Materias Suscritas</md-subheader>
+		<div class="container">
+			<md-list>
+				<md-list-item ng-click="navigateTo(course.id, $event)" class="md-2-line md-whiteframe-z1 b-p course-item" ng-class="{'solved': course.status != 0 }" ng-repeat="course in courses">
+					<div class="md-list-item-text">
+						<h3> {{ course.course }} </h3>
+						<p> {{ course.subtitle }} </p>
+					</div>
+					<span class="md-secondary"><ng-md-icon icon="question_answer"></ng-md-icon> {{ course.comments }}</span>
+				</md-list-item>
+			</md-list>
+			<md-divider></md-divider>
+		</div>
+	</md-content>
 </div>
-<md-button class="md-accent md-fab md-fab-bottom-right">
+<md-button class="md-accent md-fab md-fab-bottom-right md-fixed">
 	<ng-md-icon icon="add"></ng-md-icon>
 </md-button>

@@ -38,22 +38,13 @@ angular.module('app',['ngCordova','ngMaterial','ngRoute','ngMdIcons'])
 	
 }])
 
-.controller('SignUpCtrl', ['$scope','$http', function ($scope,$http) {
+.controller('SignUpCtrl', ['$scope','$http','register','$location', function ($scope,$http,register,$location) {
 
 	$scope.user = {};
-	
-
-	$http.post('172.16.0.36:8000/user/create',$scope.user).
-	  success(function(data, status, headers, config) {
-	    // this callback will be called asynchronously
-	    // when the response is available
-	    console.log(data);
-	  }).
-	  error(function(data, status, headers, config) {
-	    // called asynchronously if an error occurs
-	    // or server returns response with an error status.
-	    console.log(data);
-	  });
+	$scope.registerFunc=function(user){
+		register.addUser(user.name,user.email,user.password);
+		$location.path('/login/');
+	};
 
 
 
@@ -134,18 +125,6 @@ angular.module('app',['ngCordova','ngMaterial','ngRoute','ngMdIcons'])
 			$location.path('/dash/');
 		}	
 	};
-
-	$http.post('172.16.0.36:8000/login',$scope.user).
-	  success(function(data, status, headers, config) {
-	    // this callback will be called asynchronously
-	    // when the response is available
-	    console.log(data);
-	  }).
-	  error(function(data, status, headers, config) {
-	    // called asynchronously if an error occurs
-	    // or server returns response with an error status.
-	    console.log(data);
-	  });
 }])
 
 .service('register', function () {
