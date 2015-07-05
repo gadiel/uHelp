@@ -17,6 +17,10 @@ angular.module('app',['ngCordova','ngMaterial','ngRoute','ngMdIcons'])
 	.when('/course/:id', {
 		templateUrl: 'views/course.html',
 		controller: 'CourseCtrl'
+	})	
+	.when('/signup', {
+		templateUrl: 'views/signup.html',
+		controller: 'SignUpCtrl'
 	})
 	.otherwise({ redirectTo: '/login' });
 }])
@@ -32,6 +36,25 @@ angular.module('app',['ngCordova','ngMaterial','ngRoute','ngMdIcons'])
 
 .controller('rootCtrl', ['$scope', function ($scope) {
 	
+}]).controller('SignUpCtrl', ['$scope','$http', function ($scope,$http) {
+
+	$scope.user = {};
+	
+
+	$http.post('172.16.0.36:8000/user/create',$scope.user).
+	  success(function(data, status, headers, config) {
+	    // this callback will be called asynchronously
+	    // when the response is available
+	    console.log(data);
+	  }).
+	  error(function(data, status, headers, config) {
+	    // called asynchronously if an error occurs
+	    // or server returns response with an error status.
+	    console.log(data);
+	  });
+
+
+
 }])
 .controller('CourseCtrl', ['$scope','$routeParams', '$mdBottomSheet', function ($scope, $routeParams, $mdBottomSheet) {
 	$scope.courseId = $routeParams.id;
@@ -94,6 +117,22 @@ angular.module('app',['ngCordova','ngMaterial','ngRoute','ngMdIcons'])
 	$scope.navigateTo = function($id){
 		$location.path('/course/' + $id);
 	}
+}])
+.controller('LoginCtrl', ['$scope', '$http', function ($scope, $http) {
+	$scope.user = {};
+	
+
+	$http.post('172.16.0.36:8000/login',$scope.user).
+	  success(function(data, status, headers, config) {
+	    // this callback will be called asynchronously
+	    // when the response is available
+	    console.log(data);
+	  }).
+	  error(function(data, status, headers, config) {
+	    // called asynchronously if an error occurs
+	    // or server returns response with an error status.
+	    console.log(data);
+	  });
 }]);
 
 document.addEventListener("deviceready", function() {

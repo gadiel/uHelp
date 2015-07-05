@@ -1,0 +1,30 @@
+<div class="fullwidth middle" >
+	<div class="middle-wrap">
+		<img src="img/logo.png" alt="" class="img-responsive logo-res animated fadeInUp">
+		<md-content layout-padding>
+    <form name="userForm" ng-submit="login.html">
+      <div layout layout-sm="column">
+       <md-input-container flex>
+          <label>Email</label>
+          <input type="email" ng-model="user.email" required>
+        </md-input-container>
+        <md-input-container flex>
+          <label>First name</label>
+          <input ng-model="user.firstName">
+        </md-input-container>
+        <md-input-container flex>
+          <label>Last Name</label>
+          <input ng-model="user.lastName">
+        </md-input-container>
+		<md-input-container >
+        <label>Password</label>
+        <input ng-model="user.password" type="password" ng-model="user.password" required>
+      </md-input-container>
+       <md-button class="md-raised md-primary" type='submit'>Create Account</md-button>
+      </div>
+     
+    </form>
+  </md-content>
+		
+	</div>
+</div>
