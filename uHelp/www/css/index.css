@@ -20,6 +20,16 @@ html, .ng-view {
 
 .uh-bg{
 	background-color: #4876B7 !important;
+	color: #FFF;
+}
+
+.md-stretch-tabs{
+	background-color: #4876B7 !important;
+	color: #FFF;
+}
+
+.md-tabs-canvas.md-center-tabs .md-tab{
+	color: #FFF !important;
 }
 
 .st-easy{
