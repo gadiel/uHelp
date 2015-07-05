@@ -37,6 +37,36 @@ html, .ng-view {
 	text-align: center;
 }
 
+.welcome-text{
+	font-weight: 100;
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+.md-button.md-fab {
+	line-height: 1em;
+}
+
+.toolbar-icon{
+	margin-top: -12px;
+	margin-right: 8px;
+}
+.toolbar-icon-lg{
+	margin-top: -22px;
+	margin-right: 8px;
+	margin-left: 8px;
+}
+.b-p {
+margin-bottom: 15px;
+}
+
+.course-item{
+	border-left: 6px solid #CC6666;
+}
+.course-item.solved{
+	border-left-color: #B5BD67;
+}
+
 .not-fullwidth,
 .fullwidth.not-overflow {
 	height: 100%;

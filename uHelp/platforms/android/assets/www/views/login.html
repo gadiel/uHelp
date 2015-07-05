@@ -7,14 +7,14 @@
 						<img src="img/logo.png" alt="" class="img-responsive logo-res animated fadeInUp">
 						<md-input-container>
 							<label>Usuario / E-Mail</label>
-							<input ng-model="user.username" type="text">
+							<input ng-model="user.username" type="text" required>
 						</md-input-container>
 						<md-input-container>
 							<label>Password</label>
-							<input ng-model="user.password" type="password">
+							<input ng-model="user.password" type="password" required>
 						</md-input-container>
 						<md-input-container>
-							<md-button ng-href="#/dash" class="md-raised md-primary">Enviar</md-button>
+							<md-button ng-click="login(user.username,user.password)" class="md-raised md-primary">Enviar</md-button>
 						</md-input-container>
 					</form>
 				</div>

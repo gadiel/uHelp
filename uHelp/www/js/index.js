@@ -8,7 +8,7 @@ angular.module('app',['ngCordova','ngMaterial','ngRoute','ngMdIcons'])
 	})
 	.when('/login', {
 		templateUrl: 'views/login.html',
-		controller: 'RouteCtrl'
+		controller: 'LoginCtrl'
 	})
 	.when('/dash', {
 		templateUrl: 'views/dash.html',
@@ -118,9 +118,14 @@ angular.module('app',['ngCordova','ngMaterial','ngRoute','ngMdIcons'])
 		$location.path('/course/' + $id);
 	}
 }])
-.controller('LoginCtrl', ['$scope', '$http', function ($scope, $http) {
+.controller('LoginCtrl', ['$scope', '$http','$location', 'register', function ($scope, $http,$location,register) {
 	$scope.user = {};
 	
+	$scope.login=function(user,password){
+		if( register.isCorrectUser(user,password)){
+			$location.path('/dash/');
+		}	
+	};
 
 	$http.post('172.16.0.36:8000/login',$scope.user).
 	  success(function(data, status, headers, config) {
