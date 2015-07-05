@@ -112,13 +112,13 @@ angular.module('app',['ngCordova','ngMaterial','ngRoute','ngMdIcons'])
 
 .controller('RouteCtrl', ['$scope', '$location', function ($scope, $location) {
 	$scope.courses = [
-	  { id:00, course: 'Matematicas', subtitle: 'Clase 206', comments: 36, status: true },
-	  { id:01, course: 'Español', subtitle: 'Clase 308', comments: 28, status: false },
-	  { id:02, course: 'Informatica', subtitle: 'Clase 101', comments: 12, status: false },
-	  { id:03, course: 'Psicologia', subtitle: 'Clase 102', comments: 22, status: true },
-	  { id:01, course: 'Español', subtitle: 'Clase 308', comments: 28, status: false },
-	  { id:02, course: 'Informatica', subtitle: 'Clase 101', comments: 12, status: false },
-	  { id:03, course: 'Psicologia', subtitle: 'Clase 102', comments: 22, status: true },
+	  { id:0, course: 'Matematicas', subtitle: 'Clase 206', comments: 36, status: true },
+	  { id:1, course: 'Español', subtitle: 'Clase 308', comments: 28, status: false },
+	  { id:2, course: 'Informatica', subtitle: 'Clase 101', comments: 12, status: false },
+	  { id:3, course: 'Psicologia', subtitle: 'Clase 102', comments: 22, status: true },
+	  { id:1, course: 'Español', subtitle: 'Clase 308', comments: 28, status: false },
+	  { id:2, course: 'Informatica', subtitle: 'Clase 101', comments: 12, status: false },
+	  { id:3, course: 'Psicologia', subtitle: 'Clase 102', comments: 22, status: true },
 	];
 
 	$scope.navigateTo = function($id){
@@ -150,24 +150,50 @@ angular.module('app',['ngCordova','ngMaterial','ngRoute','ngMdIcons'])
 
 .service('register', function () {
     return {
-        courses : [
+        users : [
 		  { id:0, completeName: 'Raul Hernandez', email: 'raul@unitec.edu', password: "hola123"},
 		  { id:1, completeName: 'Mario Skool', email: 'skooly@uth.hn', password: "hola123"},
 		  { id:2, completeName: 'Monica Maria', email: 'moni@ceutec.edu', password: "hola123"},
 		  { id:3, completeName: 'William Johnson', email: 'will@unitec.edu', password: "hola123"},
 		],
         addUser: function (completeName,email,password) {
-            this.courses.push({id:1,completeName:completeName,email:email,password:password});
+            this.users.push({id:1,completeName:completeName,email:email,password:password});
         },
         isCorrectUser: function(email,password) {
 			var index =-1;
-            for(var i = 0, len = this.courses.length; i < len; i++) {
-				if (this.courses[i].email === email&&this.courses[i].password === password) {
+            for(var i = 0, len = this.users.length; i < len; i++) {
+				if (this.users[i].email === email&&this.users[i].password === password) {
 			        index = i;
 			        break;
 			    }
 			}
 			return index>-1?true:false;
+        }
+    };
+})
+.service('courses', function () {
+    return {
+        courses : [
+		  { id:0, course: 'Matematicas',dificulty:0, classCode: 'Clase 206', comments: [{pregunta:"Examen 1 que tan dificil?",respuesta:"Es tranqui"}], status: true },
+		  { id:1, course: 'Español',dificulty:1, classCode: 'Clase 308', comments: [{pregunta:"Examen 1 que tan dificil?",respuesta:"Es tranqui"}], status: false },
+		  { id:2, course: 'Informatica',dificulty:1, classCode: 'Clase 101', comments: [{pregunta:"Examen 1 que tan dificil?",respuesta:"Es tranqui"}], status: false },
+		  { id:3, course: 'Psicologia',dificulty:0, classCode: 'Clase 102', comments: [{pregunta:"Examen 1 que tan dificil?",respuesta:"Es tranqui"}], status: true },
+		  { id:4, course: 'Calculo',dificulty:2, classCode: 'Clase 308', comments: [{pregunta:"Examen 1 que tan dificil?",respuesta:"Es tranqui"}], status: false },
+		  { id:5, course: 'Diseño',dificulty:0, classCode: 'Clase 101', comments: [{pregunta:"Examen 1 que tan dificil?",respuesta:"Es tranqui"}], status: false },
+		  { id:6, course: 'Programacion',dificulty:2, classCode: 'Clase 102', comments: [{pregunta:"Examen 1 que tan dificil?",respuesta:"Es tranqui"}], status: true },
+		],
+        addCourse: function (course,classCode,dificulty) {
+            this.courses.push({id:7,course:course,dificulty:dificulty,classCode:classCode,comments:0,status:false});
+        },
+        getCourseById: function(id) {
+			var index =-1;
+            for(var i = 0, len = this.courses.length; i < len; i++) {
+				if (this.courses[i].id === id) {
+			        index = i;
+			        break;
+			    }
+			}
+			return this.courses[index];
         }
     };
 });
