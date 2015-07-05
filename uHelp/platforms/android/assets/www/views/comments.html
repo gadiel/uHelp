@@ -1,13 +1,14 @@
 <md-bottom-sheet class="md-grid">
 	<md-input-container md-no-float>
 		<label>Titulo del Tema</label>
-		<input ng-model="comm.title">
+		<input ng-model="comm.question">
 	</md-input-container>
 	<md-input-container flex>
 		<label>Comentario</label>
-		<textarea ng-model="comm.text" columns="1" md-maxlength="150"></textarea>
+		<textarea ng-model="comm.ans" columns="1" md-maxlength="150"></textarea>
 	</md-input-container>
 	<md-input-container>
 		<md-button ng-click="sendComm()" class="md-raised md-primary">Enviar</md-button>
+		<md-button ng-click="closeComm()" class="md-raised md-warn">Cerrar</md-button>
 	</md-input-container>
 </md-bottom-sheet>
