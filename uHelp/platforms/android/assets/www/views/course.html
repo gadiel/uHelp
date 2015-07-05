@@ -1,28 +1,28 @@
-<md-toolbar class="md-tall">
-	<h1 flex class=""><ng-md-icon icon="class" class="toolbar-icon-lg" size="42"></ng-md-icon> {{ courses[courseId].course }} </h1>
+<md-toolbar class="md-tall uh-bg">
+	<h1 flex class=""><ng-md-icon icon="class" class="toolbar-icon-lg" size="42"></ng-md-icon> {{ course.course }} </h1>
 	<h2 class="md-toolbar-tools md-toolbar-tools-bottom">
-		<span class="md-flex">{{ cotaburses[courseId].subtitle }}</span>
+		<span class="md-flex">{{ course.classCode }}</span>
 	</h2>
 </md-toolbar>
-<md-tabs md-dynamic-height md-border-bottom class="md-primary">
+<md-tabs md-dynamic-height md-border-bottom class="" style="min-height:100%;">
 	<md-tab>
-		<md-tab-label><ng-md-icon icon="announcement"></ng-md-icon></md-tab-label>
-		<md-tab-body class="md-padding">
-			<md-toolbar class="md-primary md-hue-1">
+		<md-tab-label><ng-md-icon icon="announcement" class="white"></ng-md-icon></md-tab-label>
+		<md-tab-body class="md-padding" style="height:100%">
+			<md-toolbar class="uh-hue-bg md-primary md-hue-1">
 				<h2 class="md-toolbar-tools">
 					<span>Comentarios Recientes</span>
 				</h2>
 			</md-toolbar>
 			<md-content>
 				<md-list>
-					<md-list-item class="md-3-line" ng-repeat="item in messages">
+					<md-list-item class="md-3-line" ng-repeat="item in course.comments">
 					<img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
 					<div class="md-list-item-text">
-						<h3>{{item.what}}</h3>
+						<h3>{{item.pregunta}}</h3>
 						<h4>{{item.who}}</h4>
-						<p>{{item.notes}}</p>
+						<p>{{item.respuesta}}</p>
 					</div>
-					<md-divider md-inset ng-if="!$last"></md-divider>
+					<md-divider md-inset></md-divider>
 					</md-list-item>
 				</md-list>
 			</md-content>
@@ -31,7 +31,7 @@
 	<md-tab>
 		<md-tab-label><ng-md-icon icon="supervisor_account"></ng-md-icon></md-tab-label>
 		<md-tab-body class="md-padding">
-			<md-toolbar class="md-theme-pink md-hue-1">
+			<md-toolbar class="uh-hue-bg md-theme-pink md-hue-1">
 				<h2 class="md-toolbar-tools">
 					<span>Profesores Participantes</span>
 				</h2>
@@ -48,7 +48,7 @@
 					</md-list-item>
 				</md-list>
 			</md-content>
-			<md-toolbar class="md-theme-indigo md-hue-1">
+			<md-toolbar class="uh-hue-bg md-theme-indigo md-hue-1">
 				<h2 class="md-toolbar-tools">
 					<span>Estudiantes Participantes</span>
 				</h2>
@@ -70,7 +70,7 @@
 	<md-tab>
 		<md-tab-label><ng-md-icon icon="get_app"></ng-md-icon></md-tab-label>
 		<md-tab-body class="md-padding">
-			<md-toolbar class="md-theme-cyan md-hue-1">
+			<md-toolbar class="uh-hue-bg md-theme-cyan md-hue-1">
 				<h2 class="md-toolbar-tools">
 					<span>Proyectos Completados</span>
 				</h2>
@@ -87,7 +87,7 @@
 					</md-list-item>
 				</md-list>
 			</md-content>
-			<md-toolbar class="md-theme-lime md-hue-1">
+			<md-toolbar class="uh-hue-bg md-theme-lime md-hue-1">
 				<h2 class="md-toolbar-tools">
 					<span>Simulacros de Examen</span>
 				</h2>
@@ -104,7 +104,7 @@
 					</md-list-item>
 				</md-list>
 			</md-content>
-			<md-toolbar class="md-theme-amber md-hue-1">
+			<md-toolbar class="uh-hue-bg md-theme-amber md-hue-1">
 				<h2 class="md-toolbar-tools">
 					<span>Habilidades Necesarias</span>
 				</h2>
@@ -121,7 +121,7 @@
 					</md-list-item>
 				</md-list>
 			</md-content>
-			<md-toolbar class="md-theme-brown md-hue-1">
+			<md-toolbar class="uh-hue-bg md-theme-brown md-hue-1">
 				<h2 class="md-toolbar-tools">
 					<span>Habilidades que Aprenderas</span>
 				</h2>
@@ -143,7 +143,7 @@
 	<md-tab>
 		<md-tab-label><ng-md-icon icon="info"></ng-md-icon></md-tab-label>
 		<md-tab-body class="md-padding">
-			<md-toolbar class="md-theme-light md-hue-1">
+			<md-toolbar class="uh-hue-bg md-theme-light md-hue-1">
 				<h2 class="md-toolbar-tools">
 					<span>Libros necesarios</span>
 				</h2>
@@ -160,7 +160,7 @@
 					</md-list-item>
 				</md-list>
 			</md-content>
-			<md-toolbar class="md-theme-red md-hue-1">
+			<md-toolbar class="uh-hue-bg md-theme-red md-hue-1">
 				<h2 class="md-toolbar-tools">
 					<span>Herramientas/Materiales Necesarios</span>
 				</h2>
@@ -181,6 +181,6 @@
 	</md-tab>
 
 </md-tabs>
-<md-button class="md-accent md-fab md-fab-bottom-right" ng-click="showListBottomSheet($event)">
-	<ng-md-icon icon="add"></ng-md-icon>
-</md-button>
+<md-button class="md-accent md-fab md-fab-bottom-right md-fixed" ng-click="showListBottomSheet($event)">
+				<ng-md-icon icon="add"></ng-md-icon>
+			</md-button>

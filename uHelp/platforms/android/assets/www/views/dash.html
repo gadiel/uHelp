@@ -1,5 +1,5 @@
 <div layout="column" flex layout-fill>
-   <md-toolbar class="md-default-theme">
+   <md-toolbar class="md-default-theme uh-bg">
 		<span flex></span>
 		<div class="md-toolbar-tools">
 			<h2>
@@ -13,12 +13,12 @@
 		<md-subheader>Materias Suscritas</md-subheader>
 		<div class="container">
 			<md-list>
-				<md-list-item ng-click="navigateTo(course.id, $event)" class="md-2-line md-whiteframe-z1 b-p course-item" ng-class="{'solved': course.status != 0 }" ng-repeat="course in courses">
+				<md-list-item ng-click="navigateTo(course.id, $event)" class="md-2-line md-whiteframe-z1 b-p course-item md-primary" ng-class="{'st-easy': course.dificulty == 2, 'st-med': course.dificulty == 1, 'st-hard': course.dificulty == 0}" ng-repeat="course in courses">
 					<div class="md-list-item-text">
 						<h3> {{ course.course }} </h3>
-						<p> {{ course.subtitle }} </p>
+						<p> {{ course.classCode }} </p>
 					</div>
-					<span class="md-secondary"><ng-md-icon icon="question_answer"></ng-md-icon> {{ course.comments }}</span>
+					<span class="md-secondary"><ng-md-icon icon="question_answer"></ng-md-icon> {{ course.comments.length }}</span>
 				</md-list-item>
 			</md-list>
 			<md-divider></md-divider>
