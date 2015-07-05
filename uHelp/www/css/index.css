@@ -1,0 +1,76 @@
+body { 
+	/*padding-top: 40px; */
+	-webkit-animation: 0.3s fadeIn;
+	-o-animation: 0.3s fadeIn;
+	animation: 0.3s fadeIn;
+	font-family: 'Roboto', Tahoma;
+}
+
+body,
+html, .ng-view {
+	padding: 0;
+	position: relative;
+	height: 100%;
+	margin: 0;
+	font-weight: 100;
+	-webkit-transition: opacity 400ms;
+	-moz-transition: opacity 400ms;
+	transition: opacity 400ms;
+}
+
+.main-view.ng-enter {
+    -webkit-animation: .5s fadeInUp;
+    -o-animation: .5s fadeInUp;
+    animation: .5s fadeInUp
+}
+
+.fullwidth {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+}
+
+.logo-res{
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+
+.not-fullwidth,
+.fullwidth.not-overflow {
+	height: 100%;
+	overflow: hidden;
+}
+
+.cover {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.middle {
+	display: table;
+}
+
+.middle-wrap {
+	display: table-cell;
+	position: relative;
+	vertical-align: middle;
+	width: 100%;
+}
+
+/*======= Map Styling ============*/
+.gmnoprint a, .gmnoprint span {
+    display:none;
+}
+/*.gmnoprint div {
+    background:none !important;
+}*/
+.map div div a div img{
+    opacity: 0.5;
+}
+
+/*@media screen and (max-width: 768px) {
+	body { padding-top: 50px; }
+}*/
