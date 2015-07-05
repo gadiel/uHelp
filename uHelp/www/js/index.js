@@ -1,11 +1,9 @@
-angular.module('app',['ngCordova', 'ngAnimate','ngRoute'])
+angular.module('app',['ngCordova','ngMaterial','ngRoute'])
 
-.config(['$routeProvider',function($routeProvider) {
+.config(['$routeProvider',function($routeProvider,$location) {
 	$routeProvider.when('/', {
 		templateUrl: 'views/welcome.html',
-		controller: function($scope){
-			// 
-		}
+		controller: 'rootCtrl'
 	}).when('/route', {
 		templateUrl: 'views/route.html',
 		controller: 'RouteCtrl'
@@ -21,6 +19,9 @@ angular.module('app',['ngCordova', 'ngAnimate','ngRoute'])
 	};
 }])
 
+.controller('rootCtrl', ['$scope', function ($scope) {
+	
+}])
 .controller('RouteCtrl', ['$scope', function ($scope) {
 	
 }]);
