@@ -133,7 +133,30 @@ angular.module('app',['ngCordova','ngMaterial','ngRoute','ngMdIcons'])
 	    // or server returns response with an error status.
 	    console.log(data);
 	  });
-}]);
+}])
+.service('register', function () {
+    return {
+        courses : [
+		  { id:0, completeName: 'Raul Hernandez', email: 'raul@unitec.edu', password: "hola123"},
+		  { id:1, completeName: 'Mario Skool', email: 'skooly@uth.hn', password: "hola123"},
+		  { id:2, completeName: 'Monica Maria', email: 'moni@ceutec.edu', password: "hola123"},
+		  { id:3, completeName: 'William Johnson', email: 'will@unitec.edu', password: "hola123"},
+		],
+        addUser: function (completeName,email,password) {
+            this.courses.push({id:1,completeName:completeName,email:email,password:password});
+        },
+        isCorrectUser: function(email,password) {
+			var index =-1;
+            for(var i = 0, len = this.courses.length; i < len; i++) {
+				if (this.courses[i].email === email&&this.courses[i].password === password) {
+			        index = i;
+			        break;
+			    }
+			}
+			return index>-1?true:false;
+        }
+    };
+});
 
 document.addEventListener("deviceready", function() {
 	angular.bootstrap(document, ["app"]);
