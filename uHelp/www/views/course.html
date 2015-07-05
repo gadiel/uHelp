@@ -8,7 +8,7 @@
 	<md-tab>
 		<md-tab-label><ng-md-icon icon="announcement"></ng-md-icon></md-tab-label>
 		<md-tab-body class="md-padding">
-			<md-toolbar class="md-theme-light md-hue-1">
+			<md-toolbar class="md-primary md-hue-1">
 				<h2 class="md-toolbar-tools">
 					<span>Comentarios Recientes</span>
 				</h2>
@@ -31,9 +31,26 @@
 	<md-tab>
 		<md-tab-label><ng-md-icon icon="supervisor_account"></ng-md-icon></md-tab-label>
 		<md-tab-body class="md-padding">
-			<md-toolbar class="md-theme-light md-hue-1">
+			<md-toolbar class="md-theme-pink md-hue-1">
 				<h2 class="md-toolbar-tools">
-					<span>Usuarios Participantes</span>
+					<span>Profesores Participantes</span>
+				</h2>
+			</md-toolbar>
+			<md-content>
+				<md-list>
+					<md-list-item class="md-3-line" ng-repeat="item in messages">
+					<img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
+					<div class="md-list-item-text">
+						<h3>{{ item.who }}</h3>
+						<h4>{{ 'jhkaksdk' }}</h4>
+					</div>
+					<md-divider md-inset ng-if="!$last"></md-divider>
+					</md-list-item>
+				</md-list>
+			</md-content>
+			<md-toolbar class="md-theme-indigo md-hue-1">
+				<h2 class="md-toolbar-tools">
+					<span>Estudiantes Participantes</span>
 				</h2>
 			</md-toolbar>
 			<md-content>
@@ -53,15 +70,113 @@
 	<md-tab>
 		<md-tab-label><ng-md-icon icon="get_app"></ng-md-icon></md-tab-label>
 		<md-tab-body class="md-padding">
-			<h1 class="md-display-2">Resources</h1>
-			<p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+			<md-toolbar class="md-theme-cyan md-hue-1">
+				<h2 class="md-toolbar-tools">
+					<span>Proyectos Completados</span>
+				</h2>
+			</md-toolbar>
+			<md-content>
+				<md-list>
+					<md-list-item class="md-3-line" ng-repeat="item in messages">
+					<img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
+					<div class="md-list-item-text">
+						<h3>{{ item.who }}</h3>
+						<h4>{{ 'jhkaksdk' }}</h4>
+					</div>
+					<md-divider md-inset ng-if="!$last"></md-divider>
+					</md-list-item>
+				</md-list>
+			</md-content>
+			<md-toolbar class="md-theme-lime md-hue-1">
+				<h2 class="md-toolbar-tools">
+					<span>Simulacros de Examen</span>
+				</h2>
+			</md-toolbar>
+			<md-content>
+				<md-list>
+					<md-list-item class="md-3-line" ng-repeat="item in messages">
+					<img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
+					<div class="md-list-item-text">
+						<h3>{{ item.who }}</h3>
+						<h4>{{ 'jhkaksdk' }}</h4>
+					</div>
+					<md-divider md-inset ng-if="!$last"></md-divider>
+					</md-list-item>
+				</md-list>
+			</md-content>
+			<md-toolbar class="md-theme-amber md-hue-1">
+				<h2 class="md-toolbar-tools">
+					<span>Habilidades Necesarias</span>
+				</h2>
+			</md-toolbar>
+			<md-content>
+				<md-list>
+					<md-list-item class="md-3-line" ng-repeat="item in messages">
+					<img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
+					<div class="md-list-item-text">
+						<h3>{{ item.who }}</h3>
+						<h4>{{ 'jhkaksdk' }}</h4>
+					</div>
+					<md-divider md-inset ng-if="!$last"></md-divider>
+					</md-list-item>
+				</md-list>
+			</md-content>
+			<md-toolbar class="md-theme-brown md-hue-1">
+				<h2 class="md-toolbar-tools">
+					<span>Habilidades que Aprenderas</span>
+				</h2>
+			</md-toolbar>
+			<md-content>
+				<md-list>
+					<md-list-item class="md-3-line" ng-repeat="item in messages">
+					<img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
+					<div class="md-list-item-text">
+						<h3>{{ item.who }}</h3>
+						<h4>{{ 'jhkaksdk' }}</h4>
+					</div>
+					<md-divider md-inset ng-if="!$last"></md-divider>
+					</md-list-item>
+				</md-list>
+			</md-content>
 		</md-tab-body>
 	</md-tab>
 	<md-tab>
 		<md-tab-label><ng-md-icon icon="info"></ng-md-icon></md-tab-label>
 		<md-tab-body class="md-padding">
-			<h1 class="md-display-2">Resources</h1>
-			<p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+			<md-toolbar class="md-theme-light md-hue-1">
+				<h2 class="md-toolbar-tools">
+					<span>Libros necesarios</span>
+				</h2>
+			</md-toolbar>
+			<md-content>
+				<md-list>
+					<md-list-item class="md-3-line" ng-repeat="item in messages">
+					<img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
+					<div class="md-list-item-text">
+						<h3>{{ item.who }}</h3>
+						<h4>{{ 'jhkaksdk' }}</h4>
+					</div>
+					<md-divider md-inset ng-if="!$last"></md-divider>
+					</md-list-item>
+				</md-list>
+			</md-content>
+			<md-toolbar class="md-theme-red md-hue-1">
+				<h2 class="md-toolbar-tools">
+					<span>Herramientas/Materiales Necesarios</span>
+				</h2>
+			</md-toolbar>
+			<md-content>
+				<md-list>
+					<md-list-item class="md-3-line" ng-repeat="item in messages">
+					<img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
+					<div class="md-list-item-text">
+						<h3>{{ item.who }}</h3>
+						<h4>{{ 'jhkaksdk' }}</h4>
+					</div>
+					<md-divider md-inset ng-if="!$last"></md-divider>
+					</md-list-item>
+				</md-list>
+			</md-content>
 		</md-tab-body>
 	</md-tab>
 
