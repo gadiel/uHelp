@@ -36,7 +36,9 @@ angular.module('app',['ngCordova','ngMaterial','ngRoute','ngMdIcons'])
 
 .controller('rootCtrl', ['$scope', function ($scope) {
 	
-}]).controller('SignUpCtrl', ['$scope','$http', function ($scope,$http) {
+}])
+
+.controller('SignUpCtrl', ['$scope','$http', function ($scope,$http) {
 
 	$scope.user = {};
 	
@@ -56,6 +58,7 @@ angular.module('app',['ngCordova','ngMaterial','ngRoute','ngMdIcons'])
 
 
 }])
+
 .controller('CourseCtrl', ['$scope','$routeParams', '$mdBottomSheet', function ($scope, $routeParams, $mdBottomSheet) {
 	$scope.courseId = $routeParams.id;
 
@@ -106,9 +109,13 @@ angular.module('app',['ngCordova','ngMaterial','ngRoute','ngMdIcons'])
 		});
 	};
 }])
+
 .controller('RouteCtrl', ['$scope', '$location', function ($scope, $location) {
 	$scope.courses = [
 	  { id:00, course: 'Matematicas', subtitle: 'Clase 206', comments: 36, status: true },
+	  { id:01, course: 'Español', subtitle: 'Clase 308', comments: 28, status: false },
+	  { id:02, course: 'Informatica', subtitle: 'Clase 101', comments: 12, status: false },
+	  { id:03, course: 'Psicologia', subtitle: 'Clase 102', comments: 22, status: true },
 	  { id:01, course: 'Español', subtitle: 'Clase 308', comments: 28, status: false },
 	  { id:02, course: 'Informatica', subtitle: 'Clase 101', comments: 12, status: false },
 	  { id:03, course: 'Psicologia', subtitle: 'Clase 102', comments: 22, status: true },
@@ -118,6 +125,7 @@ angular.module('app',['ngCordova','ngMaterial','ngRoute','ngMdIcons'])
 		$location.path('/course/' + $id);
 	}
 }])
+
 .controller('LoginCtrl', ['$scope', '$http','$location', 'register', function ($scope, $http,$location,register) {
 	$scope.user = {};
 	
@@ -139,6 +147,7 @@ angular.module('app',['ngCordova','ngMaterial','ngRoute','ngMdIcons'])
 	    console.log(data);
 	  });
 }])
+
 .service('register', function () {
     return {
         courses : [
